@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 import imgs from './images'
+import {string, shape} from 'prop-types'
 
 class ShowCard extends Component {
   render () {
@@ -18,4 +19,12 @@ class ShowCard extends Component {
   }
 }
 
+ShowCard.propTypes = {
+  show: shape({
+    poster: string,
+    title: string.isRequired,
+    year: string,
+    description: string
+  })
+}
 export default ShowCard
