@@ -13,7 +13,13 @@ class Search extends Component {
     return (
       <div className='search'>
         {/* <pre><code>{JSON.stringify(preload, null, 2)}</code></pre> */}
-        {preload.shows.map(card)}
+        <header>
+          <h1>MyFlix</h1>
+          <input type='text' placeholder='Search' />
+        </header>
+        <div className='search'>
+          {preload.shows.map(card)}
+        </div>
       </div>
     )
   }
