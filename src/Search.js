@@ -11,7 +11,7 @@ const card = (show) => {
 class Search extends Component {
   constructor (props) {
     super(props)
-    this.state = {searchTerm: 'this is the default string'}
+    this.state = {searchTerm: ''}
   }
 
   handleSearchTermChange (event) {
@@ -22,7 +22,7 @@ class Search extends Component {
     return (
       <div className='search'>
         <header>
-          <h1>{this.state.searchTerm}</h1>
+          <h1>MyFlix</h1>
           <input onChange={this.handleSearchTermChange.bind(this)} value={this.state.searchTerm} type='text' placeholder='Search' />
         </header>
         <div className='search'>
