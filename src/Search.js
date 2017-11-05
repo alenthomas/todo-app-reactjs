@@ -9,13 +9,21 @@ const card = (show) => {
 }
 
 class Search extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {searchTerm: 'this is the default string'}
+  }
+
+  handleSearchTermChange (event) {
+    this.setState({searchTerm: event.target.value})
+  }
+
   render () {
     return (
       <div className='search'>
-        {/* <pre><code>{JSON.stringify(preload, null, 2)}</code></pre> */}
         <header>
-          <h1>MyFlix</h1>
-          <input type='text' placeholder='Search' />
+          <h1>{this.state.searchTerm}</h1>
+          <input onChange={this.handleSearchTermChange.bind(this)} value={this.state.searchTerm} type='text' placeholder='Search' />
         </header>
         <div className='search'>
           {preload.shows.map(card)}
