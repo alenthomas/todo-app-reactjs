@@ -26,7 +26,10 @@ class Search extends Component {
           <input onChange={this.handleSearchTermChange.bind(this)} value={this.state.searchTerm} type='text' placeholder='Search' />
         </header>
         <div className='search'>
-          {preload.shows.map(card)}
+          {preload.shows.filter((show) =>
+             `${show.title} ${show.description}`.toUpperCase()
+             .indexOf(this.state.searchTerm.toUpperCase()) >= 0)
+          .map(card)}
         </div>
       </div>
     )
