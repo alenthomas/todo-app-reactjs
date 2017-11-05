@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
+import {HashRouter, Route} from 'react-router-dom'
+
+import Landing from './Landing'
+
 import './assets/style/normalize.css'
 import './assets/style/style.css'
 
 class App extends Component {
   render () {
     return (
-      <div className='app'>
-        <div className='landing' >
-          <h1>MyFlix</h1>
-          <input type='text' placeholder='Search' />
-          <a>or Browse All</a>
+      <HashRouter>
+        <div className='app'>
+          <Route path='/' component={Landing} />
         </div>
-      </div>
+      </HashRouter>
+
     )
   }
 }
