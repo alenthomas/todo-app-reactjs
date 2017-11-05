@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import './assets/style/normalize.css'
+import './assets/style/style.css'
 
 class App extends Component {
   render () {
-    const style = {color: this.props.color}
     return (
-      <div>
-        <h1 style={style}>{this.props.title.toUpperCase()}</h1>
+      <div className='app'>
+        <div className='landing' >
+          <h1>MyFlix</h1>
+          <input type='text' placeholder='Search' />
+          <a>or Browse All</a>
+        </div>
       </div>
     )
   }
