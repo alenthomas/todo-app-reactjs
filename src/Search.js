@@ -5,7 +5,7 @@ import ShowCard from './ShowCard'
 import preload from './assets/data.json'
 
 const card = (show) => {
-  return (<ShowCard key={show.imdbID} show={show} />)
+  return (<ShowCard key={show.imdbID} {...show} />)
 }
 
 class Search extends Component {
