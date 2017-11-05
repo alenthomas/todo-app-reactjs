@@ -1,19 +1,11 @@
 import React, {Component} from 'react'
 
-import preload from './assets/data.json'
-import imgs from './images'
+import ShowCard from './ShowCard'
 
-const showTitle = (show) => {
-  return (
-    <div className='show-card'>
-      <img src={imgs[show.poster]} alt={show.poster} />
-      <div>
-        <h3>{show.title}</h3>
-        <h4>({show.year})</h4>
-        <p>{show.description}</p>
-      </div>
-    </div>
-  )
+import preload from './assets/data.json'
+
+const card = (show) => {
+  return (<ShowCard key={show.imdbID} show={show} />)
 }
 
 class Search extends Component {
@@ -21,7 +13,7 @@ class Search extends Component {
     return (
       <div className='search'>
         {/* <pre><code>{JSON.stringify(preload, null, 2)}</code></pre> */}
-        {preload.shows.map(showTitle)}
+        {preload.shows.map(card)}
       </div>
     )
   }
